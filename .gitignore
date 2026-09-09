@@ -1,0 +1,27 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# Agent/skill folders (tidak perlu diupload)
+.agent/
+.claude/
+.cursor/
+.windsurf/
+.continue/
+.gemini/
+.roo/
+.github/
+.qoder/
+.trae/
+.codebuddy/
+.kiro/

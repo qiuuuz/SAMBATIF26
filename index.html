@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAMBATIF26 — Gacha Twibbon</title>
+  <meta name="description" content="Gacha Twibbon SAMBATIF26 — Dapatkan twibbon eksklusif kamu sekarang!" />
+  <meta name="theme-color" content="#0B0D2E" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind custom config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy:         '#0B0D2E',
+            'navy-light': '#13163D',
+            blue:         '#4A5490',
+            slate:        '#7480A0',
+            cream:        '#EDE8DC',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Anime.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+
+<body>
+
+  <!-- ─── Loading Screen ───────────────────────────────── -->
+  <div id="loading">
+    <img src="SAMBATIF26/SAMBATIF26.png" alt="SAMBATIF26" class="loading-logo" />
+    <div class="loading-bar">
+      <div class="loading-progress"></div>
+    </div>
+    <p style="font-size:0.65rem; letter-spacing:0.25em; color:var(--slate); font-family:'Coolvetica',sans-serif; white-space:nowrap;">LOADING</p>
+  </div>
+
+  <!-- ─── Particles Background ─────────────────────────── -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ─── Theme Burst Overlay ──────────────────────────── -->
+  <div id="theme-burst"></div>
+
+  <!-- ─── Confetti Container ───────────────────────────── -->
+  <div class="confetti-container" id="confetti-container"></div>
+
+  <!-- ─── Navbar ───────────────────────────────────────── -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <img src="SAMBATIF26/wada.png" alt="Logo UMRI" />
+      <img src="SAMBATIF26/tifooficial.png" alt="Logo TIF UMRI" />
+      <img src="SAMBATIF26/himpunan.png" alt="Logo HM-TIF" />
+      <span class="nav-title">SAMBATIF26</span>
+    </div>
+    <span class="nav-badge">TIF 2026</span>
+  </nav>
+
+  <!-- ─── Hero Section ─────────────────────────────────── -->
+  <section id="hero">
+    <div class="hero-glow"></div>
+
+    <p class="hero-eyebrow reveal">Selamat Datang di</p>
+
+    <img
+      src="SAMBATIF26/LOGO SAMBA TIF.png"
+      alt="Logo SAMBA TIF"
+      class="hero-logo reveal"
+      style="transition-delay:0.1s"
+    />
+
+    <h1 class="hero-title reveal" style="transition-delay:0.2s">SAMBATIF26</h1>
+
+    <p class="hero-subtitle reveal" style="transition-delay:0.3s">
+      Spin & temukan twibbon eksklusif lu. Dapetin karakter yang paling relate sama vibe lu, terus gas bikin JJ sekeren mungkin dan tunjukin identitas lu! 
+    </p>
+
+    <a href="#gacha-section" class="btn-gacha reveal" style="transition-delay:0.4s">
+      <span class="btn-shine"></span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+      </svg>
+      MULAI GACHA
+    </a>
+  </section>
+
+  <!-- ─── Preview Cards Section ────────────────────────── -->
+  <section id="preview" class="reveal">
+    <div style="max-width:900px; margin:0 auto; text-align:center;">
+      <span class="section-eyebrow">Koleksi</span>
+      <h2 class="section-title">6 CODER RAHASIA</h2>
+      <div class="section-divider" style="margin:16px auto 0;"></div>
+      <p style="font-size:0.82rem; color:var(--slate); margin-top:12px; line-height:1.6;">
+        Masing-masing punya makna dan keunikannya sendiri. Kamu akan dapatkan salah satunya.
+      </p>
+    </div>
+
+    <div class="cards-grid">
+      <div class="preview-card" role="button" tabindex="0" aria-label="Lihat kartu Gagak" onclick="openGachaWithResult('GAGAK')">
+        <img src="CARD/GAGAK CARD.png" alt="Kartu Gagak" loading="lazy" />
+        <div class="preview-card-overlay"><span class="preview-card-name">GAGAK</span></div>
+      </div>
+      <div class="preview-card" role="button" tabindex="0" aria-label="Lihat kartu Garuda" onclick="openGachaWithResult('GARUDA')">
+        <img src="CARD/GARUDA CARD.png" alt="Kartu Garuda" loading="lazy" />
+        <div class="preview-card-overlay"><span class="preview-card-name">GARUDA</span></div>
+      </div>
+      <div class="preview-card" role="button" tabindex="0" aria-label="Lihat kartu Pegasus" onclick="openGachaWithResult('PEGASUS')">
+        <img src="CARD/PEGGASUS CARD.png" alt="Kartu Pegasus" loading="lazy" />
+        <div class="preview-card-overlay"><span class="preview-card-name">PEGASUS</span></div>
+      </div>
+      <div class="preview-card" role="button" tabindex="0" aria-label="Lihat kartu Rubah" onclick="openGachaWithResult('RUBAH')">
+        <img src="CARD/RUBAH CARD.png" alt="Kartu Rubah" loading="lazy" />
+        <div class="preview-card-overlay"><span class="preview-card-name">RUBAH</span></div>
+      </div>
+      <div class="preview-card" role="button" tabindex="0" aria-label="Lihat kartu Singa" onclick="openGachaWithResult('SINGA')">
+        <img src="CARD/SINGA CARD.png" alt="Kartu Singa" loading="lazy" />
+        <div class="preview-card-overlay"><span class="preview-card-name">SINGA</span></div>
+      </div>
+      <div class="preview-card" role="button" tabindex="0" aria-label="Lihat kartu Ular" onclick="openGachaWithResult('ULAR')">
+        <img src="CARD/ULAR CARD.png" alt="Kartu Ular" loading="lazy" />
+        <div class="preview-card-overlay"><span class="preview-card-name">ULAR</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Gacha Section ────────────────────────────────── -->
+  <section id="gacha-section">
+    <div style="text-align:center;" class="reveal">
+      <span class="section-eyebrow">Mesin Gacha</span>
+      <h2 class="section-title">SPIN SEKARANG</h2>
+      <div class="section-divider" style="margin:16px auto 0;"></div>
+      <p style="font-size:0.82rem; color:var(--slate); margin-top:12px; line-height:1.6;">
+        Tekan tombol untuk mendapatkan twibbon &amp; coder kamu secara acak.
+      </p>
+    </div>
+
+    <div class="gacha-machine reveal" style="transition-delay:0.15s;">
+      <div class="gacha-slot-container">
+
+        <!-- 3-Column Slot Machine -->
+        <div class="slot-machine" id="slot-machine" aria-label="Mesin slot gacha">
+
+          <!-- Frame highlight (center row) -->
+          <div class="slot-highlight-row"></div>
+
+          <!-- Col 1 -->
+          <div class="slot-col" id="slot-col-0">
+            <div class="slot-reel" id="slot-reel-0"></div>
+          </div>
+
+          <!-- Col 2 (center — hasil utama) -->
+          <div class="slot-col slot-col-center" id="slot-col-1">
+            <div class="slot-reel" id="slot-reel-1"></div>
+          </div>
+
+          <!-- Col 3 -->
+          <div class="slot-col" id="slot-col-2">
+            <div class="slot-reel" id="slot-reel-2"></div>
+          </div>
+
+          <!-- Top/bottom fade masks -->
+          <div class="slot-fade-top"></div>
+          <div class="slot-fade-bottom"></div>
+        </div>
+
+        <!-- Status label -->
+        <p class="spin-status" id="spin-status">&nbsp;</p>
+
+        <!-- Spin button -->
+        <button class="btn-spin" id="btn-spin" onclick="doGacha()" aria-label="Putar gacha">
+          <span class="shine"></span>
+          <span id="spin-text">✦ GACHA SEKARANG ✦</span>
+        </button>
+
+        <!-- Spin counter -->
+        <p class="gacha-counter">
+          Sudah di-spin: <span id="spin-count">0</span> kali
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Result Modal ─────────────────────────────────── -->
+  <div id="result-modal" role="dialog" aria-modal="true" aria-labelledby="result-name" aria-describedby="result-meaning">
+    <div class="modal-card">
+
+      <button class="modal-close" onclick="closeModal()" aria-label="Tutup modal">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <p class="result-rarity" id="result-rarity">Coder Ditemukan</p>
+
+      <img id="result-enamel" src="" alt="Enamel pin hasil gacha" class="result-enamel" />
+
+      <h2 class="result-name" id="result-name">—</h2>
+
+      <p class="result-meaning" id="result-meaning">—</p>
+
+      <div class="result-twibbon">
+        <img id="result-twibbon" src="" alt="Twibbon hasil gacha" />
+      </div>
+
+      <div class="modal-actions">
+        <a id="btn-download" href="#" download class="btn-download" aria-label="Download twibbon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          DOWNLOAD TWIBBON
+        </a>
+        <a id="btn-twibbonize" href="#" target="_blank" rel="noopener noreferrer" class="btn-twibbonize" aria-label="Pasang via Twibbonize">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 8v4l3 3"/>
+          </svg>
+          PASANG VIA TWIBBONIZE
+        </a>
+        <button id="btn-again" class="btn-again" aria-label="Spin lagi" style="display:none;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="1 4 1 10 7 10"/>
+            <path d="M3.51 15a9 9 0 1 0 .49-3.16"/>
+          </svg>
+          SPIN LAGI
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─── Footer ───────────────────────────────────────── -->
+  <footer>
+    <div style="display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:16px;">
+      <img src="SAMBATIF26/wada.png"        alt="Logo UMRI"   style="height:32px; width:32px; object-fit:contain; object-position:center; opacity:0.75; display:block;" />
+      <img src="SAMBATIF26/tifooficial.png" alt="Logo TIF"    style="height:32px; width:32px; object-fit:contain; object-position:center; opacity:0.75; display:block;" />
+      <img src="SAMBATIF26/himpunan.png"    alt="Logo HM-TIF" style="height:32px; width:32px; object-fit:contain; object-position:center; opacity:0.75; display:block;" />
+    </div>
+
+    <!-- Social links -->
+    <div class="footer-socials">
+      <!-- Instagram -->
+      <a href="https://instagram.com/GANTILINKINI" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram SAMBATIF26">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+        </svg>
+        <span>Instagram</span>
+      </a>
+
+      <!-- TikTok -->
+      <a href="https://tiktok.com/@GANTILINKINI" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="TikTok SAMBATIF26">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.77a4.85 4.85 0 0 1-1.01-.08z"/>
+        </svg>
+        <span>TikTok</span>
+      </a>
+
+      <!-- YouTube -->
+      <a href="https://youtube.com/@GANTILINKINI" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="YouTube SAMBATIF26">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.54 3.5 12 3.5 12 3.5s-7.54 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14C4.46 20.5 12 20.5 12 20.5s7.54 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.81zM9.75 15.5v-7l6.25 3.5-6.25 3.5z"/>
+        </svg>
+        <span>YouTube</span>
+      </a>
+    </div>
+
+    <p>© 2026 SAMBATIF26 — All rights reserved</p>
+    <p style="margin-top:6px; opacity:0.6;">H4Qy - @fkryalhq_</p>
+  </footer>
+
+  <!-- ─── App Script ────────────────────────────────────── -->
+  <script src="main.js"></script>
+
+</body>
+</html>
