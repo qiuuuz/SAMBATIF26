@@ -66,15 +66,6 @@ SAMBATIF26/
 
 ---
 
-## Cara Update & Deploy
-
-```bash
-# Setelah edit file, push ke GitHub
-git add .
-git commit -m "pesan commit"
-git push
-```
-
 GitHub Pages otomatis update dalam ~1-2 menit setelah push.
 
 ---
